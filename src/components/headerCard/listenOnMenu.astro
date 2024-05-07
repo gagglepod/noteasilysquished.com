@@ -1,5 +1,7 @@
 ---
 import listenOn from "../../../.astropod/listenOn.config.json";
+import RSSIcon from "../icons/rssIcon.astro";
+import TrueFansIcon from "../icons/trueFansIcon.astro";
 import GooglePodcastIcon from "../icons/googlePodcastIcon.astro";
 import SpotifyIcon from "../icons/spotifyIcon.astro";
 import ApplePodcastIcon from "../icons/applePodcastIcon.astro";
@@ -35,6 +37,22 @@ for (const key in listenOn) {
         tabindex="0"
         class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
       >
+        {listenOn.rssFeed && (
+          <li>
+            <a href={listenOn.rssFeed}>
+              <RSSIcon />
+              RSS
+            </a>
+          </li>
+        )}
+        {listenOn.trueFans && (
+          <li>
+            <a href={listenOn.trueFans}>
+              <TrueFansIcon />
+              TrueFans
+            </a>
+          </li>
+        )}
         {listenOn.googlePodcast && (
           <li>
             <a href={listenOn.googlePodcast}>
